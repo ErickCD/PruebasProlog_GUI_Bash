@@ -6,8 +6,7 @@ main:- new(D, dialog('Panel principal')),
        send(D, append, new(Menu, menu_bar)),
        send(Menu, append, new(Iniciar, popup(iniciar))),
        send_list(Iniciar, append,
-                          [menu_item(iniciar, message(@prolog, panel1))
-                          ]),
+                          [menu_item(iniciar, message(@prolog, panel1))]),
        send(D, open, point(200,200)).
 
 panel1:- new(D, dialog('Panel secundario')),
