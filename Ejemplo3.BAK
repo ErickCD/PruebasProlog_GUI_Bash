@@ -1,0 +1,9 @@
+% Autor:
+% Fecha: 06/01/2017
+
+my_move(Gr, Point) :-
+( valid_position(Gr, Point),
+-> send(Gr, move, Point)
+;send(Gr, report, warning,
+'Cannot move %N to %N', Gr, Point)
+).
