@@ -1,20 +1,13 @@
 % Autor:
 % Fecha: 07/01/2017
 
-inicio:- cont('2', '1'),
-         recorded(k, head(Suma)),
+dos:- recorded(k, head(Suma)),
          number_chars(Suma, Lis),
          send(Suma, free),
          atom_codes(Sc, Lis),
-         cont(Sc, '1'),
+         cont(Sc, '1').
          
-         send(Lis, free),
-         send(Sc, free),
-         recorded(k, head(Suma)),
-         number_chars(Suma, Lis),
-         send(Suma, free),
-         atom_codes(Sc1, Lis),
-         cont(Sc1, '1').
+inicio:- cont('1', '1'), dos, dos, dos, dos.
 
 cont(X, X2):-write(X ), atom_number(X, Xc), atom_number(X2, X2c), Suma is Xc + X2c, recorda(k, head(Suma)), writeln(Suma).
 
